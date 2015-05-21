@@ -12,9 +12,11 @@ public class Control {
 	private static University uni;
 	
 	
-	 public Course getDamnCourse(String code){
+	 public Course getDamnCourse(int i){
 		 
-		return uni.getCourse(code);
+		 System.out.print(uni.getCourse(100));
+		return uni.getCourse(i);
+		
 	}
 	
 	

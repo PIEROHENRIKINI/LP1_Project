@@ -39,7 +39,7 @@ public class Main extends JFrame {
 		
 		
 		c.createUniversity("Uni");
-		c.getUni().addCourse(new Course("100","Test",12,13));
+		c.getUni().addCourse(new Course(100,"Test",12,13));
 		menu();
 		
 	}

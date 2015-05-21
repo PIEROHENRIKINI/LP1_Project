@@ -30,11 +30,11 @@ import edu.lp1.sistemagestaoacademica.model.vo.University;
 public class CRUDCourse extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField searchCourseTxt;
-	private JTextField textFieldCod;
-	private JTextField textFieldName;
-	private JTextField textFieldCred;
-	private JTextField textFieldMaxStu;
+	private JTextField searchCourseTxt = new JTextField();
+	private JTextField textFieldCod = new JTextField();
+	private JTextField textFieldName = new JTextField();
+	private JTextField textFieldCred = new JTextField();
+	private JTextField textFieldMaxStu = new JTextField();
 	
 	Control c = new Control();
 	
@@ -96,8 +96,9 @@ public class CRUDCourse extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				try {
-						textFieldCod.setText(c.getDamnCourse("100").getTitle());
 					
+						textFieldCod.setText(c.getDamnCourse(Integer.parseInt(searchCourseTxt.getText())).getTitle());
+	
 				} catch (Exception e2) {
 					System.out.println("not found");
 				}
@@ -112,7 +113,6 @@ public class CRUDCourse extends JFrame {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				c.getUni().addCourse(new Course(textFieldCod.getText(),textFieldName.getText(),Integer.parseInt(textFieldMaxStu.getText()),Integer.parseInt(textFieldCred.getText())));
 				JOptionPane.showMessageDialog(null,"add com sucesso");
 			}
 		});

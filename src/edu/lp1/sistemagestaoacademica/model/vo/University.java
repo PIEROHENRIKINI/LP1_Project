@@ -52,9 +52,9 @@ public class University {
 		}
 	}
 	
-	public Course getCourse(String code) {
+	public Course getCourse(int i) {
 		for(Course a: courses){
-			if(a.getCode()==code){         // done
+			if(a.getCode()==i){         // done
 				return a;
 			}
 		}
@@ -88,7 +88,7 @@ public class University {
 		
 	}
 	
-	public boolean updateCourse(String code,Course coursex){
+	public boolean updateCourse(int code,Course coursex){
 		try {
 			for (Course course : courses) {
 				if(course.getCode()==code){
@@ -115,7 +115,7 @@ public class University {
 		return null;
 	}
 	
-	public ArrayList<Student> getStudents(String courseCode){
+	public ArrayList<Student> getStudents(int courseCode){
 		ArrayList<Student> students = new ArrayList<Student>();
 		for (Registration registration : registrations) {
 			if(registration.getCourse().getCode()==courseCode){
@@ -185,7 +185,7 @@ public class University {
 		return registrations;
 	}
 	
-	public Registration getRegistration(long studentID, String courseCode){
+	public Registration getRegistration(long studentID, int courseCode){
 		for (Registration registration : registrations) {
 			if((registration.getStudent().getID()==studentID)&&(registration.getCourse().getCode()==courseCode)){
 				return registration;
@@ -198,7 +198,7 @@ public class University {
 		this.registrations = registrations;
 	}
 	
-	public boolean registerStudent(long studentID, String codeCourse){
+	public boolean registerStudent(long studentID, int codeCourse){
 		Course coursex = null;
 		Student studentx = null;
 		for (Course course : courses) {
@@ -220,7 +220,7 @@ public class University {
 		}
 	}
 	
-	public boolean deRegisterStudent(long studentID, String codeCourse){
+	public boolean deRegisterStudent(long studentID, int codeCourse){
 		for (Registration registration : registrations) {
 			if((registration.getCourse().getCode()==codeCourse)&&(registration.getStudent().getID()==studentID)){
 				registrations.remove(registration);

@@ -2,7 +2,7 @@ package edu.lp1.sistemagestaoacademica.model.vo;
 
 public class Course {
 
-	private String code;
+	private int code;
 
 	private String title;
 
@@ -11,7 +11,7 @@ public class Course {
 	private int maxStudents;
 
 
-	public Course(String code, String title, int numCredits,
+	public Course(int code, String title, int numCredits,
 			int maxStudents) {
 		super();
 		this.code = code;
@@ -24,12 +24,12 @@ public class Course {
 		// TODO Auto-generated constructor stub
 	}
 
-	public String getCode() {
+	public int getCode() {
 		
 		return this.code;
 	}
 
-	public void setCode(String code) {
+	public void setCode(int code) {
 		this.code = code;
 	}
 
