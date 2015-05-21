@@ -12,6 +12,13 @@ public class Control {
 	private static University uni;
 	
 	
+	public void addCourse1(int code,String title,int numCredits,int maxStudents){
+		
+		uni.addCourse(new Course(code, title, numCredits, maxStudents));
+		
+	}
+	
+	
 	 public Course getDamnCourse(int i){
 		 
 		 System.out.print(uni.getCourse(100));

@@ -97,8 +97,15 @@ public class CRUDCourse extends JFrame {
 				
 				try {
 					
-						textFieldCod.setText(c.getDamnCourse(Integer.parseInt(searchCourseTxt.getText())).getTitle());
+						textFieldName.setText(c.getDamnCourse(Integer.parseInt(searchCourseTxt.getText())).getTitle());
+
+						textFieldCod.setText(String.valueOf(c.getDamnCourse(Integer.parseInt(searchCourseTxt.getText())).getCode()));
 	
+						textFieldCred.setText(String.valueOf(c.getDamnCourse(Integer.parseInt(searchCourseTxt.getText())).getNumCredits()));
+						
+						textFieldMaxStu.setText(String.valueOf(c.getDamnCourse(Integer.parseInt(searchCourseTxt.getText())).getMaxStudents()));
+
+
 				} catch (Exception e2) {
 					System.out.println("not found");
 				}
@@ -112,6 +119,8 @@ public class CRUDCourse extends JFrame {
 		JButton btnNewButton_1 = new JButton("Cadastrar");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				c.addCourse1(Integer.parseInt(textFieldCod.getText()),textFieldName.getText(),Integer.parseInt(textFieldCred.getText()),Integer.parseInt(textFieldMaxStu.getText()));
 				
 				JOptionPane.showMessageDialog(null,"add com sucesso");
 			}
