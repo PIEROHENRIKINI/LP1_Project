@@ -9,27 +9,32 @@ import edu.lp1.sistemagestaoacademica.model.vo.University;
 
 public class Control {
 	
-	private static University uni;
+	private static University uni; // Cria a variavel do tipo University para acessar os metodos da classe university
 	
 	
 	public void addCourse1(int code,String title,int numCredits,int maxStudents){
 		
-		uni.addCourse(new Course(code, title, numCredits, maxStudents));
+		uni.addCourse(new Course(code, title, numCredits, maxStudents)); // usado para add curso
 		
 	}
 	
 	
 	 public Course getDamnCourse(int i){
 		 
-		 System.out.print(uni.getCourse(100));
+		 System.out.print(uni.getCourse(100)); //pega o curso
 		return uni.getCourse(i);
 		
 	}
+	 
+	 public void updateCourse1(int code,Course coursex){
+		 uni.updateCourse(code, coursex);
+		
+	 }
 	
 	
 	public void createUniversity(String name){
 		
-		uni = new University(name);
+		uni = new University(name); // cria universidade
 		
 		
 	}

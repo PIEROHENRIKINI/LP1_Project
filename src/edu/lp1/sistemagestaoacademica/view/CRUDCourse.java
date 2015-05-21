@@ -27,7 +27,7 @@ import edu.lp1.sistemagestaoacademica.controller.Control;
 import edu.lp1.sistemagestaoacademica.model.vo.Course;
 import edu.lp1.sistemagestaoacademica.model.vo.University;
 
-public class CRUDCourse extends JFrame {
+public class CRUDCourse extends JFrame { // pra baixo rola a putaria de GUI toda
 
 	private JPanel contentPane;
 	private JTextField searchCourseTxt = new JTextField();
@@ -72,7 +72,7 @@ public class CRUDCourse extends JFrame {
 		setContentPane(contentPane);
 		
 		JButton btnVoltar = new JButton("Voltar");
-		btnVoltar.setBounds(40, 492, 199, 56);
+		btnVoltar.setBounds(40, 492, 199, 56); // as propriedades do Botão
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Main a = new Main();
@@ -96,7 +96,7 @@ public class CRUDCourse extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				try {
-					
+					// busca o Curso no array da classe University e joga nos campos de texto
 						textFieldName.setText(c.getDamnCourse(Integer.parseInt(searchCourseTxt.getText())).getTitle());
 
 						textFieldCod.setText(String.valueOf(c.getDamnCourse(Integer.parseInt(searchCourseTxt.getText())).getCode()));
@@ -107,10 +107,10 @@ public class CRUDCourse extends JFrame {
 
 
 				} catch (Exception e2) {
-					System.out.println("not found");
+					System.out.println("not found"); // se rolar um erro qualquer da isso
 				}
 	
-				//Buscar Curso
+				
 			}
 		});
 		btnNewButton.setBounds(275, 70, 117, 25);
@@ -119,7 +119,7 @@ public class CRUDCourse extends JFrame {
 		JButton btnNewButton_1 = new JButton("Cadastrar");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+																		// Cadastra um Curso novo no array
 				c.addCourse1(Integer.parseInt(textFieldCod.getText()),textFieldName.getText(),Integer.parseInt(textFieldCred.getText()),Integer.parseInt(textFieldMaxStu.getText()));
 				
 				JOptionPane.showMessageDialog(null,"add com sucesso");
@@ -127,6 +127,21 @@ public class CRUDCourse extends JFrame {
 		});
 		btnNewButton_1.setBounds(443, 493, 216, 56);
 		contentPane.add(btnNewButton_1);
+		
+		JButton btnAtualizar = new JButton("Atualizar");
+		btnAtualizar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					c.updateCourse1(Integer.parseInt(textFieldCod.getText()), c.getDamnCourse(Integer.parseInt(textFieldCod.getText())));
+
+				} catch (Exception e2) {
+					System.out.println("error");
+				}
+				
+			}
+		});
+		btnAtualizar.setBounds(262, 343, 156, 56);
+		contentPane.add(btnAtualizar);
 		
 		JLabel lblDigiteOCdigo = new JLabel("Digite o Código do Curso");
 		lblDigiteOCdigo.setBounds(243, -1, 216, 15);
@@ -173,8 +188,5 @@ public class CRUDCourse extends JFrame {
 		lblNewLabel_2.setBounds(137, 276, 115, 15);
 		contentPane.add(lblNewLabel_2);
 		
-		JButton btnAtualizar = new JButton("Atualizar");
-		btnAtualizar.setBounds(262, 343, 156, 56);
-		contentPane.add(btnAtualizar);
 	}
 }

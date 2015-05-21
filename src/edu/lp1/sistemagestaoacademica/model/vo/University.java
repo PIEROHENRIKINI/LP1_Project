@@ -88,14 +88,18 @@ public class University {
 		
 	}
 	
-	public boolean updateCourse(int code,Course coursex){
+	public boolean updateCourse(int i,Course coursex){
 		try {
-			for (Course course : courses) {
-				if(course.getCode()==code){
-					courses.remove(course);
+			 
+			for (Course a : courses) {
+				if(a.getCode()==i){         // done
+					courses.remove(a);
+					System.out.println("true");
+
 					courses.add(coursex);
 				}
 			}
+			 
 			return true;
 		} catch (Exception e) {
 			return false;
