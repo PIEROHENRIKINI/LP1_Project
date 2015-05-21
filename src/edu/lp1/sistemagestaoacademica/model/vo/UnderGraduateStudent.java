@@ -1,12 +1,6 @@
-/**
- * 
- */
 package edu.lp1.sistemagestaoacademica.model.vo;
 
-/**
- * @author Brendoon Ryos
- *
- */
+
 public class UnderGraduateStudent extends Student {
 	
 	private String major = new String();

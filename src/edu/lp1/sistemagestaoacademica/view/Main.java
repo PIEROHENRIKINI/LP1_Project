@@ -5,16 +5,26 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.Font;
+import java.awt.Window;
+
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ContainerAdapter;
 import java.awt.event.ContainerEvent;
+
 import javax.swing.event.AncestorListener;
 import javax.swing.event.AncestorEvent;
+
+import edu.lp1.sistemagestaoacademica.controller.Control;
+import edu.lp1.sistemagestaoacademica.model.vo.Course;
+import edu.lp1.sistemagestaoacademica.model.vo.University;
 
 public class Main extends JFrame {
 
@@ -22,8 +32,16 @@ public class Main extends JFrame {
 	/**
 	 * Launch the application.
 	 */
+	
+	
+	static Control c = new Control();
 	public static void main(String[] args) {
+		
+		
+		c.createUniversity("Uni");
+		c.getUni().addCourse(new Course("100","Test",12,13));
 		menu();
+		
 	}
 	
 	public static void menu(){
@@ -32,6 +50,7 @@ public class Main extends JFrame {
 				try {
 					Main frame = new Main();
 					frame.setVisible(true);
+					
 					
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -48,12 +67,17 @@ public class Main extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("E:\\LP1_Project\\graduated.png"));
 		setTitle("Sistema de Gest\u00E3o Acad\u00EAmica");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 529, 399);
+		
+		setBounds(100, 100, 700, 600);
 		contentPane = new JPanel();
 		contentPane.setForeground(Color.GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+	    Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+	    int x = (int) ((dimension.getWidth() - getWidth()) / 2);
+	    int y = (int) ((dimension.getHeight() - getHeight()) / 2);
+	    setLocation(x, y);
 		
 		JButton btnUniversity = new JButton("University");
 		btnUniversity.addActionListener(new ActionListener() {

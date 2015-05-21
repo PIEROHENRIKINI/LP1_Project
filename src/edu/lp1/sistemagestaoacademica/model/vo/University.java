@@ -52,10 +52,10 @@ public class University {
 		}
 	}
 	
-	public Course getCourse(String code){
-		for (Course course : courses) {
-			if(course.getCode()==code){
-				return course;
+	public Course getCourse(String code) {
+		for(Course a: courses){
+			if(a.getCode()==code){         // done
+				return a;
 			}
 		}
 		return null;
@@ -75,7 +75,7 @@ public class University {
 		this.courses = courses;
 	}
 	
-	public boolean addCourse(Course course){
+	public  boolean addCourse(Course course){
 		try {
 			this.courses.add(course);
 			return true;
