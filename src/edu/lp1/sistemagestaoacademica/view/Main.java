@@ -34,7 +34,7 @@ public class Main extends JFrame {
 	 */
 	
 	
-	static Control c = new Control();
+	public static Control c = new Control();
 	public static void main(String[] args) {
 		
 		

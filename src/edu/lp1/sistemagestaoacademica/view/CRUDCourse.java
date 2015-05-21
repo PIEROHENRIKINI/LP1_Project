@@ -96,14 +96,7 @@ public class CRUDCourse extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				try {
-					
-					/*
-					textFieldCod.setText(c.getUni().getCourse(searchCourseTxt.getText()).getCode());
-					textFieldName.setText(c.getUni().getCourse(searchCourseTxt.getText()).getTitle());
-					textFieldCred.setText(String.valueOf(c.getUni().getCourse(searchCourseTxt.getText()).getNumCredits()));
-					textFieldMaxStu.setText(String.valueOf(c.getUni().getCourse(searchCourseTxt.getText()).getMaxStudents()));
-					*/
-
+						textFieldCod.setText(c.getDamnCourse("100").getTitle());
 					
 				} catch (Exception e2) {
 					System.out.println("not found");

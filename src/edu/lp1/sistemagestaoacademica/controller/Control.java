@@ -9,10 +9,10 @@ import edu.lp1.sistemagestaoacademica.model.vo.University;
 
 public class Control {
 	
-	private University uni;
+	private static University uni;
 	
 	
-	  Course getDamnCourse(String code){
+	 public Course getDamnCourse(String code){
 		 
 		return uni.getCourse(code);
 	}
