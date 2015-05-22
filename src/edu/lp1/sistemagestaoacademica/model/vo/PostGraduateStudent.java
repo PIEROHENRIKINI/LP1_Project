@@ -17,7 +17,7 @@ public class PostGraduateStudent extends Student {
 		this.thesisTitle = thesisTitle;
 		this.supervisor = supervisor;
 	}
-	
+	@Override
 	public String getThesisTitle() {
 		return thesisTitle;
 	}
@@ -25,7 +25,7 @@ public class PostGraduateStudent extends Student {
 	public void setThesisTitle(String thesisTitle) {
 		this.thesisTitle = thesisTitle;
 	}
-	
+	@Override
 	public String getSupervisor() {
 		return supervisor;
 	}

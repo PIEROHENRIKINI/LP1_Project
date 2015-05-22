@@ -24,6 +24,7 @@ import javax.swing.event.AncestorEvent;
 
 import edu.lp1.sistemagestaoacademica.controller.Control;
 import edu.lp1.sistemagestaoacademica.model.vo.Course;
+import edu.lp1.sistemagestaoacademica.model.vo.PostGraduateStudent;
 import edu.lp1.sistemagestaoacademica.model.vo.UnderGraduateStudent;
 import edu.lp1.sistemagestaoacademica.model.vo.University;
 
@@ -55,6 +56,8 @@ public class Main extends JFrame {
 		c.createUniversity("Default_name");
 		c.getUni().addCourse(new Course(100,"Test",12,13));
 		c.getUni().addUnderGraduateStudent(new UnderGraduateStudent(123,"Hideki Higuch","Rua Butant�","(11)98485-7452","hideki.higuch@outlook.com","Engenharia","Computa��o"));
+		c.getUni().addPostGraduateStudent(new PostGraduateStudent(1234,"Brendoon Ryos","Rua Cardeal Arcoverde 2205","(11)94608-7215","brendoon-ryos@live.com","XXXXX","XXXXXX"));
+
 		menu();
 		
 	}

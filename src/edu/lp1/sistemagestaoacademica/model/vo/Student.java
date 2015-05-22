@@ -13,6 +13,9 @@ public abstract class Student {
 	protected String email = new String();
 	protected String major = new String();
 	protected String minor = new String();
+	protected String thesisTitle = new String();
+	protected String supervisor = new String();
+	
 		
 	
 
@@ -78,6 +81,14 @@ public abstract class Student {
 	
 	public String toString(){
 		return " \n|ID: "+ID+" \n|Nome: "+name+" \n|Endereço: "+address+" \n|Telefone: "+phone+" \n|Email: "+email;
+	}
+	public String getThesisTitle() {
+		// TODO Auto-generated method stub
+		return thesisTitle;
+	}
+	public String getSupervisor() {
+		// TODO Auto-generated method stub
+		return supervisor;
 	}
 	
 	
