@@ -10,7 +10,7 @@ package edu.lp1.sistemagestaoacademica.model.vo;
 public class Registration {
 	
 	private Student student;
-	private Course course = new Course();
+	private Course course;
 	private Integer acadYear;
 	private Integer semester;
 	

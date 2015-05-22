@@ -3,8 +3,8 @@ package edu.lp1.sistemagestaoacademica.model.vo;
 
 public class UnderGraduateStudent extends Student {
 	
-	private String major = new String();
-	private String minor = new String();
+	private String major;
+	private String minor;
 	
 	
 

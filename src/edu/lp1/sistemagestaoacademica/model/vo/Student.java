@@ -3,18 +3,20 @@
  */
 package edu.lp1.sistemagestaoacademica.model.vo;
 
+import com.jgoodies.common.base.Objects;
+
 
 public abstract class Student {
 	
 	protected long ID;
-	protected String name = new String();
-	protected String address = new String();
-	protected String phone = new String();
-	protected String email = new String();
-	protected String major = new String();
-	protected String minor = new String();
-	protected String thesisTitle = new String();
-	protected String supervisor = new String();
+	protected String name;
+	protected String address;
+	protected String phone;
+	protected String email;
+	protected String major;
+	protected String minor;
+	protected String thesisTitle;
+	protected String supervisor;
 	
 		
 	
@@ -77,7 +79,32 @@ public abstract class Student {
 		this.email = email;
 	}
 	
-	public abstract boolean equals(Object obj);
+	@Override
+	public boolean equals(Object obj){
+		if(obj==null){
+			return false;
+		}
+		if(getClass()!=obj.getClass()){
+			return false;
+		}
+		Student other = (Student)obj;
+		if(!Objects.equals(this.ID, other.ID)){
+			return false;
+		}
+		if(this.name!=other.name){
+			return false;
+		}
+		if(this.address!=other.address){
+			return false;
+		}
+		if(this.phone!=other.phone){
+			return false;
+		}
+		if(this.email!=other.email){
+			return false;
+		}
+		return true;
+	}
 	
 	public String toString(){
 		return " \n|ID: "+ID+" \n|Nome: "+name+" \n|Endereço: "+address+" \n|Telefone: "+phone+" \n|Email: "+email;
@@ -90,6 +117,7 @@ public abstract class Student {
 		// TODO Auto-generated method stub
 		return supervisor;
 	}
+	
 	
 	
 

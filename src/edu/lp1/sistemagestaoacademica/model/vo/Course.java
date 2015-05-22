@@ -1,5 +1,7 @@
 package edu.lp1.sistemagestaoacademica.model.vo;
 
+import java.util.Objects;
+
 public class Course {
 
 	private int code;
@@ -18,10 +20,6 @@ public class Course {
 		this.title = title;
 		this.numCredits = numCredits;
 		this.maxStudents = maxStudents;
-	}
-
-	public Course() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public int getCode() {
@@ -57,16 +55,33 @@ public class Course {
 		this.maxStudents = maxStudents;
 	}
 
+	@Override
 	public boolean equals(Object obj) {
-		return false;
+		if(obj==null){
+			return false;
+		}
+		if(getClass()!=obj.getClass()){
+			return false;
+		}
+		Course other = (Course)obj;
+		if(!Objects.equals(this.code,other.code)){
+			return false;
+		}
+		if(this.title!=other.title){
+			return false;
+		}
+		if(this.numCredits!=other.numCredits){
+			return false;
+		}
+		if(this.maxStudents!=other.maxStudents){
+			return false;
+		}
+		return true;
 	}
 	
 	@Override
 	public String toString() {
 		 return this.code+"  "+ this.title +"  "+ this.maxStudents +"  "+ this.numCredits;
 		
-		
 	}
-	
-
 }

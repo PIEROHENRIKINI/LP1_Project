@@ -8,14 +8,11 @@ import java.util.List;
 
 public class University {
 	
-	private String name = new String();
-	private List<Course> courses = new ArrayList<Course>();
-	private List<Student> students = new ArrayList<Student>();
-	private List<Registration> registrations = new ArrayList<Registration>();
+	private String name;
+	private List<Course> courses;
+	private List<Student> students;
+	private List<Registration> registrations;
 	
-	public University() {
-		
-	}
 	
 	public University(String name){
 		this.name = name;
