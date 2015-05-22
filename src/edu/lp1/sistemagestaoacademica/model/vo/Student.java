@@ -3,18 +3,31 @@
  */
 package edu.lp1.sistemagestaoacademica.model.vo;
 
-/**
- * @author Brendoon Ryos
- *
- */
+
 public abstract class Student {
 	
-	private long ID;
-	private String name = new String();
-	private String address = new String();
-	private String phone = new String();
-	private String email = new String();
+	protected long ID;
+	protected String name = new String();
+	protected String address = new String();
+	protected String phone = new String();
+	protected String email = new String();
+	protected String major = new String();
+	protected String minor = new String();
 		
+	
+
+	public String getMajor() {
+		return major;
+	}
+	public void setMajor(String major) {
+		this.major = major;
+	}
+	public String getMinor() {
+		return minor;
+	}
+	public void setMinor(String minor) {
+		this.minor = minor;
+	}
 	public Student() {
 		
 	}
@@ -26,6 +39,8 @@ public abstract class Student {
 		this.phone = phone;
 		this.email = email;
 	}
+	
+	
 	public long getID() {
 		return ID;
 	}

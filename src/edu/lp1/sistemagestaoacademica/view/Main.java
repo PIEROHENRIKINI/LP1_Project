@@ -24,14 +24,20 @@ import javax.swing.event.AncestorEvent;
 
 import edu.lp1.sistemagestaoacademica.controller.Control;
 import edu.lp1.sistemagestaoacademica.model.vo.Course;
+import edu.lp1.sistemagestaoacademica.model.vo.UnderGraduateStudent;
 import edu.lp1.sistemagestaoacademica.model.vo.University;
+
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
+
 import javax.swing.SpringLayout;
+
 import java.awt.BorderLayout;
+
 import javax.swing.BoxLayout;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+
 import java.awt.CardLayout;
 
 public class Main extends JFrame {
@@ -48,6 +54,7 @@ public class Main extends JFrame {
 		
 		c.createUniversity("Default_name");
 		c.getUni().addCourse(new Course(100,"Test",12,13));
+		c.getUni().addUnderGraduateStudent(new UnderGraduateStudent(123,"Hideki Higuch","Rua Butant�","(11)98485-7452","hideki.higuch@outlook.com","Engenharia","Computa��o"));
 		menu();
 		
 	}

@@ -42,10 +42,11 @@ public class University {
 		return courses;
 	}
 	
-	public void getCourseS(){
+	public List<Course> getCourseS(){
 		for (Course course : courses) {
 			System.out.println("|Código: "+course.getCode()+" |Titulo: "+course.getTitle()+" |Número de Créditos: "+course.getNumCredits()+" |Máximo de Estudantes: "+course.getMaxStudents()+"\n");
 		}
+		return courses;
 	}
 	
 	public Course getCourse(int i) {

@@ -71,12 +71,25 @@ public class CRUDStudent extends JFrame {
 		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 15));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				CRUDUnderGraduate a = new CRUDUnderGraduate();
+				a.startUnder();
+				setVisible(false);
+				
 			}
 		});
 		btnNewButton.setBounds(122, 199, 210, 79);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("PostGraduate");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				CRUDPostGraduate a = new CRUDPostGraduate();
+				a.startPost();
+				setVisible(false);
+			}
+		});
 		btnNewButton_1.setFont(new Font("Times New Roman", Font.BOLD, 15));
 		btnNewButton_1.setBounds(392, 199, 210, 79);
 		contentPane.add(btnNewButton_1);

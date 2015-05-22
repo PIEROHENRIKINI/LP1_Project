@@ -15,7 +15,7 @@ public class UnderGraduateStudent extends Student {
 	}
 	
 	
-
+	@Override
 	public String getMajor() {
 		return major;
 	}
@@ -27,7 +27,7 @@ public class UnderGraduateStudent extends Student {
 	}
 
 
-
+	@Override
 	public String getMinor() {
 		return minor;
 	}

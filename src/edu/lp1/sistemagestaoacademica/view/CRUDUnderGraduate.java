@@ -9,8 +9,15 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+
 import java.awt.Font;
+
 import javax.swing.SwingConstants;
+
+import edu.lp1.sistemagestaoacademica.controller.Control;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class CRUDUnderGraduate extends JFrame {
 
@@ -23,16 +30,18 @@ public class CRUDUnderGraduate extends JFrame {
 	private JTextField textField_5;
 	private JTextField textField_6;
 	private JTextField textField_7;
-
+	Control c = new Control();
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public void startUnder() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					CRUDUnderGraduate frame = new CRUDUnderGraduate();
 					frame.setVisible(true);
+					c.centerCode(frame);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -52,6 +61,14 @@ public class CRUDUnderGraduate extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton button = new JButton("Back");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CRUDStudent a = new CRUDStudent();
+				a.start3();
+				dispose();
+				
+			}
+		});
 		button.setBounds(102, 494, 199, 56);
 		contentPane.add(button);
 		
@@ -94,7 +111,7 @@ public class CRUDUnderGraduate extends JFrame {
 		lblName.setBounds(196, 188, 49, 35);
 		contentPane.add(lblName);
 		
-		JLabel lblId = new JLabel("ID");
+		final JLabel lblId = new JLabel("ID");
 		lblId.setFont(new Font("Dialog", Font.BOLD, 15));
 		lblId.setBounds(196, 138, 70, 35);
 		contentPane.add(lblId);
@@ -105,6 +122,19 @@ public class CRUDUnderGraduate extends JFrame {
 		contentPane.add(textField_3);
 		
 		JButton button_3 = new JButton("Search");
+		button_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			textField_3.setText(String.valueOf(c.getUni().getStudent(Long.parseLong(textField_4.getText())).getID()));
+			textField_2.setText(c.getUni().getStudent(Long.parseLong(textField_4.getText())).getName());
+			textField_1.setText(c.getUni().getStudent(Long.parseLong(textField_4.getText())).getAddress());
+			textField.setText(c.getUni().getStudent(Long.parseLong(textField_4.getText())).getPhone());
+			textField_5.setText(c.getUni().getStudent(Long.parseLong(textField_4.getText())).getEmail());
+			textField_6.setText(c.getUni().getStudent(Long.parseLong(textField_4.getText())).getMajor());
+			textField_7.setText(c.getUni().getStudent(Long.parseLong(textField_4.getText())).getMinor());
+		
+			}
+		});
 		button_3.setBounds(330, 87, 117, 25);
 		contentPane.add(button_3);
 		
@@ -117,7 +147,7 @@ public class CRUDUnderGraduate extends JFrame {
 		
 		JLabel lblEnterStudentId = new JLabel("Enter Student ID");
 		lblEnterStudentId.setFont(new Font("Times New Roman", Font.BOLD, 15));
-		lblEnterStudentId.setBounds(330, 11, 216, 15);
+		lblEnterStudentId.setBounds(330, 11, 137, 15);
 		contentPane.add(lblEnterStudentId);
 		
 		textField_5 = new JTextField();

@@ -1,6 +1,7 @@
 package edu.lp1.sistemagestaoacademica.controller;
 
 import java.awt.Dimension;
+import java.awt.List;
 import java.awt.Toolkit;
 import java.awt.Window;
 import java.util.ArrayList;
@@ -60,6 +61,12 @@ public class Control {
 	    int x = (int) ((dimension.getWidth() - frame.getWidth()) / 2);
 	    int y = (int) ((dimension.getHeight() - frame.getHeight()) / 2);
 	    frame.setLocation(x, y);
+	}
+	
+	public java.util.List<Course> takeCourse(){
+		
+		return uni.getCourseS();
+		
 	}
 
 

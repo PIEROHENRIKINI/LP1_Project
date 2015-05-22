@@ -9,8 +9,14 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+
 import java.awt.Font;
+
 import javax.swing.SwingConstants;
+
+import edu.lp1.sistemagestaoacademica.controller.Control;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class CRUDPostGraduate extends JFrame {
 
@@ -23,16 +29,18 @@ public class CRUDPostGraduate extends JFrame {
 	private JTextField textField_5;
 	private JTextField textField_6;
 	private JTextField textField_7;
-
+	
+	Control c = new Control();
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public void startPost() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					CRUDPostGraduate frame = new CRUDPostGraduate();
 					frame.setVisible(true);
+					c.centerCode(frame);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -58,6 +66,15 @@ public class CRUDPostGraduate extends JFrame {
 		contentPane.add(panel);
 		
 		JButton button = new JButton("Back");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				CRUDStudent a = new CRUDStudent();
+				a.start3();
+				dispose();
+				
+			}
+		});
 		button.setBounds(102, 494, 199, 56);
 		panel.add(button);
 		
@@ -121,7 +138,7 @@ public class CRUDPostGraduate extends JFrame {
 		textField_4.setBounds(304, 37, 175, 39);
 		panel.add(textField_4);
 		
-		JLabel label_4 = new JLabel("Enter Student ID");
+		JLabel label_4 = new JLabel("Student ID");
 		label_4.setFont(new Font("Times New Roman", Font.BOLD, 15));
 		label_4.setBounds(330, 11, 216, 15);
 		panel.add(label_4);
