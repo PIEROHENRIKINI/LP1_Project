@@ -130,7 +130,7 @@ public class CRUDCourse extends JFrame { // pra baixo rola a putaria de GUI toda
 		
 		JButton btnAtualizar = new JButton("Atualizar");
 		btnAtualizar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e) { // tenta atualizar o Curso ((sem sucesso)o problema não é aqui) 
 				try {
 					c.updateCourse1(Integer.parseInt(textFieldCod.getText()), c.getDamnCourse(Integer.parseInt(textFieldCod.getText())));
 

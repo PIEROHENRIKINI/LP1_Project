@@ -3,6 +3,7 @@ package edu.lp1.sistemagestaoacademica.controller;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.Window;
+import java.util.ArrayList;
 
 import edu.lp1.sistemagestaoacademica.model.vo.Course;
 import edu.lp1.sistemagestaoacademica.model.vo.University;
@@ -18,6 +19,12 @@ public class Control {
 		
 	}
 	
+	public  ArrayList<Course>  takeTable(){
+		
+		return uni.getCourses();
+		
+		
+	}
 	
 	 public Course getDamnCourse(int i){
 		 

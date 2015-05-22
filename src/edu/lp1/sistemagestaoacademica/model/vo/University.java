@@ -6,10 +6,6 @@ package edu.lp1.sistemagestaoacademica.model.vo;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author Brendoon Ryos
- *
- */
 public class University {
 	
 	private String name = new String();
@@ -80,7 +76,6 @@ public class University {
 			this.courses.add(course);
 			return true;
 		} catch (Exception e) {
-			System.out.println("Erro ao adicionar curso.");
 			return false;
 		} finally{
 			System.out.println("Curso adicionado com sucesso.");
@@ -94,8 +89,6 @@ public class University {
 			for (Course a : courses) {
 				if(a.getCode()==i){         // done
 					courses.remove(a);
-					System.out.println("true");
-
 					courses.add(coursex);
 				}
 			}
