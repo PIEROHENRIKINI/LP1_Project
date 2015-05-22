@@ -141,7 +141,7 @@ public class CRUDCourse extends JFrame { // pra baixo rola a putaria de GUI toda
 				
 			}
 		});
-		btnAtualizar.setBounds(268, 347, 175, 56);
+		btnAtualizar.setBounds(268, 494, 175, 56);
 		contentPane.add(btnAtualizar);
 		
 		JLabel lblDigiteOCdigo = new JLabel("Enter Course Code");
