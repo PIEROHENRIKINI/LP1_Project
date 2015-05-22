@@ -40,6 +40,7 @@ public class ConsultStudent extends JFrame {
 					ConsultStudent frame = new ConsultStudent();
 					frame.setVisible(true);
 					frame.setResizable(false);
+					c.centerCode(frame);
 
 				} catch (Exception e) {
 					e.printStackTrace();

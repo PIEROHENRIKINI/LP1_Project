@@ -138,7 +138,7 @@ public class CRUDRegistration extends JFrame {
 		btnRegistrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					c.registerDamnStudent(Integer.parseInt(textFieldIDStudent.getText()),Integer.parseInt(textFieldCodeCourse.getText()));
+					//c.registerDamnStudent(Integer.parseInt(textFieldIDStudent.getText()),Integer.parseInt(textFieldCodeCourse.getText()));
 					setVisible(false);
 					
 				} catch (Exception e2) {

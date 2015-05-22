@@ -35,6 +35,7 @@ public class CRUDStudent extends JFrame {
 	private JPanel contentPane;
 
 	Control c = new Control();
+	Main a = new Main();
 	/**
 	 * Launch the application.
 	 */
@@ -81,6 +82,13 @@ public class CRUDStudent extends JFrame {
 		contentPane.add(btnNewButton_1);
 		
 		JButton button = new JButton("Back");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				a.menu();
+				setVisible(false);
+
+			}
+		});
 		button.setBounds(258, 452, 199, 56);
 		contentPane.add(button);
 		

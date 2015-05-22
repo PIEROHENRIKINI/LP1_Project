@@ -11,6 +11,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
+import edu.lp1.sistemagestaoacademica.controller.Control;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -21,7 +23,7 @@ public class ConsultCourse extends JFrame {
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
-
+	Control c = new Control();
 	/**
 	 * Launch the application.
 	 */
@@ -32,6 +34,7 @@ public class ConsultCourse extends JFrame {
 					ConsultCourse frame = new ConsultCourse();
 					frame.setVisible(true);
 					frame.setResizable(false);
+					c.centerCode(frame);
 
 				} catch (Exception e) {
 					e.printStackTrace();

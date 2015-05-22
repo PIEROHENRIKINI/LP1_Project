@@ -61,5 +61,7 @@ public class Control {
 	    int y = (int) ((dimension.getHeight() - frame.getHeight()) / 2);
 	    frame.setLocation(x, y);
 	}
+
+
 	
 }
