@@ -1,12 +1,14 @@
 package edu.lp1.sistemagestaoacademica.view;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
@@ -19,11 +21,13 @@ import java.awt.Toolkit;
 public class CRUDRegistration extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+	private JTextField textFieldIDStudent;
+	private JTextField textFieldCodeCourse;
+	private JTextField textFieldAcadYear;
+	private JTextField textFieldSemester;
+	
 	Control c = new Control();
+
 	/**
 	 * Launch the application.
 	 */
@@ -33,6 +37,14 @@ public class CRUDRegistration extends JFrame {
 				try {
 					CRUDRegistration frame = new CRUDRegistration();
 					frame.setVisible(true);
+					
+					//-------------Centraliza Janela--------------------
+				    Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+				    int x = (int) ((dimension.getWidth() - frame.getWidth()) / 2);
+				    int y = (int) ((dimension.getHeight() - frame.getHeight()) / 2);
+				    frame.setLocation(x, y);
+				    //------------------Fim---------------------
+
 					frame.setResizable(false);
 					c.centerCode(frame);
 				} catch (Exception e) {
@@ -67,25 +79,25 @@ public class CRUDRegistration extends JFrame {
 		contentPane.setLayout(null);
 		contentPane.add(btnVoltar);
 		
-		textField = new JTextField();
-		textField.setBounds(198, 54, 176, 33);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		textFieldIDStudent = new JTextField();
+		textFieldIDStudent.setBounds(198, 54, 176, 33);
+		contentPane.add(textFieldIDStudent);
+		textFieldIDStudent.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(198, 117, 176, 33);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		textFieldCodeCourse = new JTextField();
+		textFieldCodeCourse.setBounds(198, 117, 176, 33);
+		contentPane.add(textFieldCodeCourse);
+		textFieldCodeCourse.setColumns(10);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(198, 173, 176, 33);
-		contentPane.add(textField_2);
-		textField_2.setColumns(10);
+		textFieldAcadYear = new JTextField();
+		textFieldAcadYear.setBounds(198, 173, 176, 33);
+		contentPane.add(textFieldAcadYear);
+		textFieldAcadYear.setColumns(10);
 		
-		textField_3 = new JTextField();
-		textField_3.setBounds(198, 224, 176, 33);
-		contentPane.add(textField_3);
-		textField_3.setColumns(10);
+		textFieldSemester = new JTextField();
+		textFieldSemester.setBounds(198, 224, 176, 33);
+		contentPane.add(textFieldSemester);
+		textFieldSemester.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("ID Student");
 		lblNewLabel.setBounds(119, 55, 100, 30);
@@ -106,6 +118,9 @@ public class CRUDRegistration extends JFrame {
 		JButton btnNewButton = new JButton("Consult");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				ConsultStudent a = new ConsultStudent();
+				a.start4();
+				setVisible(false);
 			}
 		});
 		btnNewButton.setBounds(383, 53, 89, 35);
@@ -120,6 +135,18 @@ public class CRUDRegistration extends JFrame {
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnRegistrar = new JButton("Registrar");
+		btnRegistrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					c.registerDamnStudent(Integer.parseInt(textFieldIDStudent.getText()),Integer.parseInt(textFieldCodeCourse.getText()));
+					setVisible(false);
+					
+				} catch (Exception e2) {
+					JOptionPane.showMessageDialog(null,"Erro ao Registrar");
+				}
+				
+			}
+		});
 		btnRegistrar.setBounds(310, 342, 162, 49);
 		contentPane.add(btnRegistrar);
 	}
