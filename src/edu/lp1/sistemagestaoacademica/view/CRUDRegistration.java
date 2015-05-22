@@ -11,6 +11,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+
+import edu.lp1.sistemagestaoacademica.controller.Control;
+
 import java.awt.Toolkit;
 
 public class CRUDRegistration extends JFrame {
@@ -20,7 +23,7 @@ public class CRUDRegistration extends JFrame {
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
-
+	Control c = new Control();
 	/**
 	 * Launch the application.
 	 */
@@ -30,6 +33,8 @@ public class CRUDRegistration extends JFrame {
 				try {
 					CRUDRegistration frame = new CRUDRegistration();
 					frame.setVisible(true);
+					frame.setResizable(false);
+					c.centerCode(frame);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -44,7 +49,7 @@ public class CRUDRegistration extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("D:\\LP1_Project\\graduated.png"));
 		setTitle("Registration");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 600, 477);
+		setBounds(100, 100, 750, 600);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(50, 180, 20, 180));
 		setContentPane(contentPane);

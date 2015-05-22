@@ -19,12 +19,6 @@ public class Control {
 		
 	}
 	
-	public  ArrayList<Course>  takeTable(){
-		
-		return uni.getCourses();
-		
-		
-	}
 	
 	 public Course getDamnCourse(int i){
 		 

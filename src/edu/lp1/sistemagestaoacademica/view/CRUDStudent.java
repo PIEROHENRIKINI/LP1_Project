@@ -50,6 +50,8 @@ public class CRUDStudent extends JFrame {
 				try {
 					CRUDStudent frame = new CRUDStudent();
 					frame.setVisible(true);
+					frame.setResizable(false);
+					c.centerCode(frame);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -62,7 +64,7 @@ public class CRUDStudent extends JFrame {
 	 */
 	public CRUDStudent() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 700, 600);
+		setBounds(100, 100, 750, 600);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(50, 180, 20, 180));
 		setContentPane(contentPane);

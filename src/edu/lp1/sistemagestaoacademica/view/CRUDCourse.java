@@ -48,6 +48,7 @@ public class CRUDCourse extends JFrame { // pra baixo rola a putaria de GUI toda
 				try {
 					CRUDCourse frame = new CRUDCourse();
 					frame.setVisible(true);
+					frame.setResizable(false);
 					//-------------Centraliza Janela--------------------
 				    Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
 				    int x = (int) ((dimension.getWidth() - frame.getWidth()) / 2);
@@ -66,7 +67,7 @@ public class CRUDCourse extends JFrame { // pra baixo rola a putaria de GUI toda
 	 */
 	public CRUDCourse() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 700, 600);
+		setBounds(100, 100, 750, 600);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(50, 180, 20, 180));
 		setContentPane(contentPane);
@@ -105,7 +106,7 @@ public class CRUDCourse extends JFrame { // pra baixo rola a putaria de GUI toda
 						
 						textFieldMaxStu.setText(String.valueOf(c.getDamnCourse(Integer.parseInt(searchCourseTxt.getText())).getMaxStudents()));
 
-
+						
 				} catch (Exception e2) {
 					System.out.println("not found"); // se rolar um erro qualquer da isso
 				}

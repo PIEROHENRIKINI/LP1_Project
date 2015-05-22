@@ -25,6 +25,14 @@ import javax.swing.event.AncestorEvent;
 import edu.lp1.sistemagestaoacademica.controller.Control;
 import edu.lp1.sistemagestaoacademica.model.vo.Course;
 import edu.lp1.sistemagestaoacademica.model.vo.University;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import javax.swing.SpringLayout;
+import java.awt.BorderLayout;
+import javax.swing.BoxLayout;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import java.awt.CardLayout;
 
 public class Main extends JFrame {
 
@@ -38,7 +46,7 @@ public class Main extends JFrame {
 	public static void main(String[] args) {
 		
 		
-		c.createUniversity("Uni");
+		c.createUniversity("Default_name");
 		c.getUni().addCourse(new Course(100,"Test",12,13));
 		menu();
 		
@@ -68,12 +76,11 @@ public class Main extends JFrame {
 		setTitle("Sistema de Gest\u00E3o Acad\u00EAmica");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		setBounds(100, 100, 700, 600);
+		setBounds(100, 100, 750, 600);
 		contentPane = new JPanel();
 		contentPane.setForeground(Color.GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
 	    Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
 	    int x = (int) ((dimension.getWidth() - getWidth()) / 2);
 	    int y = (int) ((dimension.getHeight() - getHeight()) / 2);
@@ -91,8 +98,6 @@ public class Main extends JFrame {
 		});
 		btnUniversity.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnUniversity.setForeground(Color.BLUE);
-		btnUniversity.setBounds(61, 11, 400, 70);
-		contentPane.add(btnUniversity);
 		
 		JButton btnCourses = new JButton("Course");
 		btnCourses.addActionListener(new ActionListener() {
@@ -105,8 +110,6 @@ public class Main extends JFrame {
 		});
 		btnCourses.setForeground(Color.BLUE);
 		btnCourses.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		btnCourses.setBounds(61, 92, 400, 70);
-		contentPane.add(btnCourses);
 		
 		JButton btnStudent = new JButton("Student");
 		btnStudent.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -118,8 +121,6 @@ public class Main extends JFrame {
 				setVisible(false);
 			}
 		});
-		btnStudent.setBounds(61, 173, 400, 70);
-		contentPane.add(btnStudent);
 		
 		JButton btnRegistration = new JButton("Registration");
 		btnRegistration.addActionListener(new ActionListener() {
@@ -131,7 +132,10 @@ public class Main extends JFrame {
 		});
 		btnRegistration.setForeground(Color.BLUE);
 		btnRegistration.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		btnRegistration.setBounds(61, 254, 400, 70);
+		contentPane.setLayout(new GridLayout(0, 4, 0, 0));
+		contentPane.add(btnUniversity);
+		contentPane.add(btnCourses);
+		contentPane.add(btnStudent);
 		contentPane.add(btnRegistration);
 	}
 }
