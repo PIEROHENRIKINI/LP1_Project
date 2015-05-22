@@ -72,8 +72,8 @@ public class CRUDCourse extends JFrame { // pra baixo rola a putaria de GUI toda
 		contentPane.setBorder(new EmptyBorder(50, 180, 20, 180));
 		setContentPane(contentPane);
 		
-		JButton btnVoltar = new JButton("Voltar");
-		btnVoltar.setBounds(40, 492, 199, 56); // as propriedades do Botão
+		JButton btnVoltar = new JButton("Back");
+		btnVoltar.setBounds(66, 494, 199, 56); // as propriedades do Botão
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Main a = new Main();
@@ -88,11 +88,11 @@ public class CRUDCourse extends JFrame { // pra baixo rola a putaria de GUI toda
 		searchCourseTxt = new JTextField();
 		searchCourseTxt.setHorizontalAlignment(SwingConstants.CENTER);
 		searchCourseTxt.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		searchCourseTxt.setBounds(243, 26, 175, 39);
+		searchCourseTxt.setBounds(268, 37, 175, 39);
 		contentPane.add(searchCourseTxt);
 		searchCourseTxt.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Buscar");
+		JButton btnNewButton = new JButton("Search");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -114,10 +114,10 @@ public class CRUDCourse extends JFrame { // pra baixo rola a putaria de GUI toda
 				
 			}
 		});
-		btnNewButton.setBounds(275, 70, 117, 25);
+		btnNewButton.setBounds(294, 87, 117, 25);
 		contentPane.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Cadastrar");
+		JButton btnNewButton_1 = new JButton("Register");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 																		// Cadastra um Curso novo no array
@@ -126,10 +126,10 @@ public class CRUDCourse extends JFrame { // pra baixo rola a putaria de GUI toda
 				JOptionPane.showMessageDialog(null,"add com sucesso");
 			}
 		});
-		btnNewButton_1.setBounds(443, 493, 216, 56);
+		btnNewButton_1.setBounds(444, 494, 216, 56);
 		contentPane.add(btnNewButton_1);
 		
-		JButton btnAtualizar = new JButton("Atualizar");
+		JButton btnAtualizar = new JButton("Update");
 		btnAtualizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) { // tenta atualizar o Curso ((sem sucesso)o problema não é aqui) 
 				try {
@@ -141,52 +141,53 @@ public class CRUDCourse extends JFrame { // pra baixo rola a putaria de GUI toda
 				
 			}
 		});
-		btnAtualizar.setBounds(262, 343, 156, 56);
+		btnAtualizar.setBounds(268, 347, 175, 56);
 		contentPane.add(btnAtualizar);
 		
-		JLabel lblDigiteOCdigo = new JLabel("Digite o Código do Curso");
-		lblDigiteOCdigo.setBounds(243, -1, 216, 15);
+		JLabel lblDigiteOCdigo = new JLabel("Enter Course Code");
+		lblDigiteOCdigo.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		lblDigiteOCdigo.setBounds(286, 11, 216, 15);
 		contentPane.add(lblDigiteOCdigo);
 		
 		textFieldCod = new JTextField();
-		textFieldCod.setBounds(262, 157, 156, 26);
+		textFieldCod.setBounds(236, 138, 240, 40);
 		contentPane.add(textFieldCod);
 		textFieldCod.setColumns(10);
 		
 		textFieldName = new JTextField();
-		textFieldName.setBounds(262, 195, 156, 26);
+		textFieldName.setBounds(236, 188, 240, 40);
 		contentPane.add(textFieldName);
 		textFieldName.setColumns(10);
 		
 		textFieldCred = new JTextField();
-		textFieldCred.setBounds(262, 233, 156, 26);
+		textFieldCred.setBounds(236, 239, 240, 39);
 		contentPane.add(textFieldCred);
 		textFieldCred.setColumns(10);
 		
 		textFieldMaxStu = new JTextField();
-		textFieldMaxStu.setBounds(262, 271, 156, 26);
+		textFieldMaxStu.setBounds(236, 289, 240, 39);
 		contentPane.add(textFieldMaxStu);
 		textFieldMaxStu.setColumns(10);
 		
-		JLabel lblCdigo = new JLabel("Código");
+		JLabel lblCdigo = new JLabel("Code");
 		lblCdigo.setFont(new Font("Dialog", Font.BOLD, 15));
-		lblCdigo.setBounds(169, 162, 70, 15);
+		lblCdigo.setBounds(133, 143, 70, 35);
 		contentPane.add(lblCdigo);
 		
-		JLabel lblNewLabel = new JLabel("Nome");
+		JLabel lblNewLabel = new JLabel("Title");
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 15));
-		lblNewLabel.setBounds(169, 199, 49, 17);
+		lblNewLabel.setBounds(133, 193, 49, 35);
 		contentPane.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("Créditos");
+		JLabel lblNewLabel_1 = new JLabel("Credits");
 		lblNewLabel_1.setFont(new Font("Dialog", Font.BOLD, 15));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblNewLabel_1.setBounds(132, 232, 86, 26);
+		lblNewLabel_1.setBounds(100, 243, 86, 35);
 		contentPane.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("Max Aluno");
+		JLabel lblNewLabel_2 = new JLabel("Max Students");
 		lblNewLabel_2.setFont(new Font("Dialog", Font.BOLD, 15));
-		lblNewLabel_2.setBounds(137, 276, 115, 15);
+		lblNewLabel_2.setBounds(133, 289, 115, 39);
 		contentPane.add(lblNewLabel_2);
 		
 	}
