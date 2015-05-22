@@ -3,10 +3,13 @@ package edu.lp1.sistemagestaoacademica.view;
 
 
 import java.awt.EventQueue;
+import java.awt.GridLayout;
+import java.awt.TextArea;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
 import java.awt.Toolkit;
@@ -19,20 +22,29 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 
 import java.awt.Font;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.SwingConstants;
 import javax.swing.JLabel;
 
 import edu.lp1.sistemagestaoacademica.controller.Control;
+import edu.lp1.sistemagestaoacademica.model.vo.Course;
+
 import javax.swing.JTable;
+import javax.swing.JTextPane;
+import javax.swing.JTextArea;
 
 public class CRUDUniversity extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
 	private JLabel lblDigiteONome;
+	JTextArea textArea = new JTextArea();
+
 	Control c = new Control();
-	private JTable table;
+	
+	
 	/**
 	 * Launch the application.
 	 */
@@ -109,9 +121,9 @@ public class CRUDUniversity extends JFrame {
 		lblDigiteONome.setBounds(311, 11, 166, 15);
 		contentPane.add(lblDigiteONome);
 		
-		table = new JTable();
-		table.setBounds(98, 102, 565, 339);
-		contentPane.add(table);
+        
+		
+		    
 		
 		JButton btnNewButton = new JButton("New button");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -121,12 +133,33 @@ public class CRUDUniversity extends JFrame {
 		btnNewButton.setBounds(324, 453, 117, 25);
 		contentPane.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("New button");
+		JButton btnNewButton_1 = new JButton("Courses");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {			//tenta esse brendoon
+			
+				List<Course> courses = new ArrayList<Course>();
+				
+				for(Course a: courses){
+				textArea.append(a.getTitle()+"\n");
+				}
+				
+				
+			}
+		});
 		btnNewButton_1.setBounds(108, 453, 117, 25);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("New button");
 		btnNewButton_2.setBounds(546, 453, 117, 25);
 		contentPane.add(btnNewButton_2);
+		
+		textArea.setBounds(103, 96, 560, 328);
+		contentPane.add(textArea);
+		
+
+		
+
+
+		
 	}
 }
