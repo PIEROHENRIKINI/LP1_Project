@@ -39,6 +39,8 @@ public class Main1 {
 		
 		mackenzie.deRegisterStudent(41485718,1);
 		System.out.println(mackenzie.getStudents(1));
+		mackenzie.updateCourse(4,new Course(4,"Letras",10,40));
+		System.out.println(mackenzie.getCourses());
 		
 		
 
