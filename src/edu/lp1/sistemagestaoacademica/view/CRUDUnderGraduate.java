@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 
@@ -15,6 +16,8 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 
 import edu.lp1.sistemagestaoacademica.controller.Control;
+import edu.lp1.sistemagestaoacademica.model.vo.PostGraduateStudent;
+import edu.lp1.sistemagestaoacademica.model.vo.UnderGraduateStudent;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -73,6 +76,14 @@ public class CRUDUnderGraduate extends JFrame {
 		contentPane.add(button);
 		
 		JButton button_1 = new JButton("Register");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				c.getUni().addUnderGraduateStudent(new UnderGraduateStudent(Long.parseLong(textField_3.getText()),textField_2.getText(),textField_1.getText(),textField.getText(),textField_5.getText(),textField_6.getText(),textField_7.getText()));
+				JOptionPane.showMessageDialog(null,"Aluno de graduação adicionado");
+				
+			}
+		});
 		button_1.setBounds(480, 494, 216, 56);
 		contentPane.add(button_1);
 		

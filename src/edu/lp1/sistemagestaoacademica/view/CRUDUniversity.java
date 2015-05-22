@@ -125,9 +125,10 @@ public class CRUDUniversity extends JFrame {
 		
 		    
 		
-		JButton btnNewButton = new JButton("New button");
+		JButton btnNewButton = new JButton("Alunos");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 			}
 		});
 		btnNewButton.setBounds(324, 453, 117, 25);
@@ -135,7 +136,7 @@ public class CRUDUniversity extends JFrame {
 		
 		JButton btnNewButton_1 = new JButton("Courses");
 		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {			//tenta esse brendoon
+			public void actionPerformed(ActionEvent e) {			
 			
 				List<Course> courses = new ArrayList<Course>();
 				
@@ -149,7 +150,11 @@ public class CRUDUniversity extends JFrame {
 		btnNewButton_1.setBounds(108, 453, 117, 25);
 		contentPane.add(btnNewButton_1);
 		
-		JButton btnNewButton_2 = new JButton("New button");
+		JButton btnNewButton_2 = new JButton("Registrations");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnNewButton_2.setBounds(546, 453, 117, 25);
 		contentPane.add(btnNewButton_2);
 		

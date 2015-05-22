@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package edu.lp1.sistemagestaoacademica.model.vo;
 
 /**

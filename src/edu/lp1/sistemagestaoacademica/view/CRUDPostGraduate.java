@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 
@@ -15,6 +16,9 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 
 import edu.lp1.sistemagestaoacademica.controller.Control;
+import edu.lp1.sistemagestaoacademica.model.vo.PostGraduateStudent;
+import edu.lp1.sistemagestaoacademica.model.vo.UnderGraduateStudent;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -79,6 +83,13 @@ public class CRUDPostGraduate extends JFrame {
 		panel.add(button);
 		
 		JButton button_1 = new JButton("Register");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+			c.getUni().addPostGraduateStudent(new PostGraduateStudent(Long.parseLong(textField_3.getText()),textField_2.getText(),textField_1.getText(),textField.getText(),textField_5.getText(),textField_6.getText(),textField_7.getText()));
+				JOptionPane.showMessageDialog(null,"Aluno de Pós graduação adicionado");
+			}
+		});
 		button_1.setBounds(480, 494, 216, 56);
 		panel.add(button_1);
 		
@@ -128,6 +139,22 @@ public class CRUDPostGraduate extends JFrame {
 		panel.add(textField_3);
 		
 		JButton button_3 = new JButton("Search");
+		button_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				textField_3.setText(String.valueOf(c.getUni().getStudent(Long.parseLong(textField_4.getText())).getID()));
+				textField_2.setText(c.getUni().getStudent(Long.parseLong(textField_4.getText())).getName());
+				textField_1.setText(c.getUni().getStudent(Long.parseLong(textField_4.getText())).getAddress());
+				textField.setText(c.getUni().getStudent(Long.parseLong(textField_4.getText())).getPhone());
+				textField_5.setText(c.getUni().getStudent(Long.parseLong(textField_4.getText())).getEmail());
+				//Done
+				textField_6.setText(c.getUni().getStudent(Long.parseLong(textField_4.getText())).getThesisTitle());
+				textField_7.setText(c.getUni().getStudent(Long.parseLong(textField_4.getText())).getSupervisor());
+
+
+				
+			}
+		});
 		button_3.setBounds(330, 87, 117, 25);
 		panel.add(button_3);
 		
