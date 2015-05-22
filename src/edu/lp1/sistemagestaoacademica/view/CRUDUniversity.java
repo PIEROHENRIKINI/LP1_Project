@@ -80,7 +80,7 @@ public class CRUDUniversity extends JFrame {
 		textField.setHorizontalAlignment(SwingConstants.CENTER);
 		textField.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		textField.setColumns(10);
-		textField.setBounds(301, 12, 160, 28);
+		textField.setBounds(307, 34, 160, 28);
 		contentPane.add(textField);
 		
 		JButton btnSalvar = new JButton("Salvar");
@@ -101,15 +101,16 @@ public class CRUDUniversity extends JFrame {
 				
 			}
 		});
-		btnSalvar.setBounds(301, 45, 160, 28);
+		btnSalvar.setBounds(307, 63, 160, 28);
 		contentPane.add(btnSalvar);
 		
 		lblDigiteONome = new JLabel("Nome da Universidade");
-		lblDigiteONome.setBounds(301, 0, 166, 15);
+		lblDigiteONome.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		lblDigiteONome.setBounds(311, 11, 166, 15);
 		contentPane.add(lblDigiteONome);
 		
 		table = new JTable();
-		table.setBounds(95, 80, 565, 339);
+		table.setBounds(98, 102, 565, 339);
 		contentPane.add(table);
 		
 		JButton btnNewButton = new JButton("New button");
@@ -117,15 +118,15 @@ public class CRUDUniversity extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton.setBounds(321, 431, 117, 25);
+		btnNewButton.setBounds(324, 453, 117, 25);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("New button");
-		btnNewButton_1.setBounds(105, 431, 117, 25);
+		btnNewButton_1.setBounds(108, 453, 117, 25);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("New button");
-		btnNewButton_2.setBounds(543, 431, 117, 25);
+		btnNewButton_2.setBounds(546, 453, 117, 25);
 		contentPane.add(btnNewButton_2);
 	}
 }
